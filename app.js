@@ -284,13 +284,13 @@ Please ensure your message follows our content guidelines:
 
 // Add this after the existing constants in app.js
 const SPAM_PATTERNS = {
-    personalNames: /(?i)\b(Daniel|[A-Z][a-z]+(?:\s[A-Z][a-z]+)?)\b/,
-    profanity: /(?i)\b(fuck|shit|bitch|asshole|bastard|damn|crap|wanker|douche|slut|whore)\b/,
-    adultContent: /(?i)\b(anal|blowjob|deepthroat|nude|porn|xxx|sex|cumshot|dildo|orgasm|escort|fetish|milf|nsfw|boobs|tits|pussy|dick|cock|vagina|penis)\b/,
-    spamPhrases: /(?i)\b(free money|earn cash|work from home|win big|special offer|limited time|click here|subscribe now|discount)\b/,
-    phishing: /(?i)\b(verify your account|password reset|bank account blocked|urgent action required|claim your prize|congratulations, you won|investment opportunity|crypto giveaway)\b/,
-    cryptoScams: /(?i)\b(bitcoin investment|crypto trading|double your money|forex signals|easy profit|no risk)\b/,
-    drugs: /(?i)\b(cocaine|heroin|meth|lsd|mdma|ecstasy|weed|cannabis|marijuana|shrooms|buy drugs online)\b/,
+    personalNames: /\b(Daniel|[A-Z][a-z]+(?:\s[A-Z][a-z]+)?)\b/i,
+    profanity: /\b(fuck|shit|bitch|asshole|bastard|damn|crap|wanker|douche|slut|whore)\b/i,
+    adultContent: /\b(anal|blowjob|deepthroat|nude|porn|xxx|sex|cumshot|dildo|orgasm|escort|fetish|milf|nsfw|boobs|tits|pussy|dick|cock|vagina|penis)\b/i,
+    spamPhrases: /\b(free money|earn cash|work from home|win big|special offer|limited time|click here|subscribe now|discount)\b/i,
+    phishing: /\b(verify your account|password reset|bank account blocked|urgent action required|claim your prize|congratulations, you won|investment opportunity|crypto giveaway)\b/i,
+    cryptoScams: /\b(bitcoin investment|crypto trading|double your money|forex signals|easy profit|no risk)\b/i,
+    drugs: /\b(cocaine|heroin|meth|lsd|mdma|ecstasy|weed|cannabis|marijuana|shrooms|buy drugs online)\b/i,
     phoneNumbers: /\b\d{3,4}[-.\s]?\d{3}[-.\s]?\d{4}\b/,
     emails: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i,
     urls: /\bhttps?:\/\/[^\s]+\b/i,

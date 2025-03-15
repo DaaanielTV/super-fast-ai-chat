@@ -282,9 +282,12 @@ Please ensure your message follows our content guidelines:
     console.log('Chat interface ready');
 });
 
-// Add this after the existing constants in app.js
+// Update the spam patterns
 const SPAM_PATTERNS = {
-    personalNames: /\b(Daniel|[A-Z][a-z]+(?:\s[A-Z][a-z]+)?)\b/i,
+    // Remove or modify the personalNames pattern since it's too restrictive
+    // personalNames: /\b(Daniel|[A-Z][a-z]+(?:\s[A-Z][a-z]+)?)\b/i,  // Remove this line
+    
+    // Keep the rest of the patterns
     profanity: /\b(fuck|shit|bitch|asshole|bastard|damn|crap|wanker|douche|slut|whore)\b/i,
     adultContent: /\b(anal|blowjob|deepthroat|nude|porn|xxx|sex|cumshot|dildo|orgasm|escort|fetish|milf|nsfw|boobs|tits|pussy|dick|cock|vagina|penis)\b/i,
     spamPhrases: /\b(free money|earn cash|work from home|win big|special offer|limited time|click here|subscribe now|discount)\b/i,

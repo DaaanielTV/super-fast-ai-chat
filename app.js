@@ -74,6 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function formatContent(content) {
         if (typeof content !== 'string') return content;
 
+        // Format headers (### Text)
+        content = content.replace(/^### (.*$)/gm, '<h3 class="content-header">$1</h3>');
+
         // Split content into regular text and code blocks
         const parts = content.split(/```(\w+)?\n([\s\S]*?)```/g);
         let formattedContent = '';

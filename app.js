@@ -74,16 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function formatContent(content) {
         if (typeof content !== 'string') return content;
 
-        // Format headers (### Text)
-        content = content.replace(/^### (.*$)/gm, '<h3 class="content-header">$1</h3>');
+        // First handle ### headers
+        content = content.replace(/### (.*$)/gm, '<h3 class="content-header">$1</h3>');
 
-        // Split content into regular text and code blocks
+        // Then handle code blocks with or without language specification
+        content = content.replace(/"""\s*([\s\S]*?)"""/g, (match, code) => {
+            return `\`\`\`\n${code.trim()}\n\`\`\``;
+        });
+
+        // Now handle triple backtick code blocks
         const parts = content.split(/```(\w+)?\n([\s\S]*?)```/g);
         let formattedContent = '';
 
         for (let i = 0; i < parts.length; i++) {
             if (i % 3 === 0) {
-                // Regular text: Format bold and lists
+                // Regular text part
                 formattedContent += parts[i]
                     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                     .replace(/^\d+\.\s+(.*)$/gm, '<li>$1</li>')
